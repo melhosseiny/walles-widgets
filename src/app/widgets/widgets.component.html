@@ -1,4 +1,4 @@
-<div fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+<div *ngIf="widgets" fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
   <mat-button-toggle-group fxLayout="row" fxLayoutAlign="start center" fxFlexOrder.xs="2" multiple *ngIf="widgets" #group="matButtonToggleGroup">
     <span class="label">Color</span>
     <mat-button-toggle disableRipple="true" matTooltip="{{color | titlecase}}" (click)="filterByColor(group.selected)" *ngFor="let color of getColors()" [attr.data-color]="color | lowercase" [value]="color"><mat-icon></mat-icon></mat-button-toggle>
