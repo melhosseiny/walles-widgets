@@ -27,7 +27,7 @@ export class WidgetsComponent implements OnInit {
     this.getWidgets();
   }
 
-  openWidgetDialog(widget: Widget): void {
+  openWidgetDialog(widget?: Widget): void {
     const dialogRef = this.dialog.open(WidgetDialogComponent, {
       width: '320px',
       data: {

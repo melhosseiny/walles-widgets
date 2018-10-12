@@ -7,6 +7,7 @@ import { WidgetService } from '../services/widget.service';
 
 export interface DialogData {
   widget: Widget;
+  colors: string[];
 }
 
 @Component({
