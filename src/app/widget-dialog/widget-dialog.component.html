@@ -27,14 +27,14 @@
     <mat-form-field>
       <mat-select formControlName="size_id" placeholder="Size">
         <mat-option *ngFor="let size of sizes" [value]="size.id">
-          {{size.title}}
+          {{size.title | titlecase}}
         </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
       <mat-select formControlName="machine_id" placeholder="Machine">
         <mat-option *ngFor="let machine of machines" [value]="machine.id">
-          {{machine.title}}
+          {{machine.title | titlecase}}
         </mat-option>
       </mat-select>
     </mat-form-field>
