@@ -1,0 +1,49 @@
+<h1 mat-dialog-title *ngIf="data.widget.id">Edit {{data.widget.name}}</h1>
+<h1 mat-dialog-title *ngIf="!data.widget.id">Add widget</h1>
+<mat-dialog-content fxLayout="column">
+  <form [formGroup]="widgetForm" fxLayout="column">
+    <mat-form-field *ngIf="!data.widget.id">
+      <input matInput placeholder="Name" formControlName="name" required>
+      <mat-error *ngIf="widgetForm.controls.name.errors?.required">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select formControlName="color" placeholder="Color" required>
+        <mat-option *ngFor="let color of data.colors" [value]="color">
+          {{color | titlecase}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="widgetForm.controls.color.errors?.required">
+        Color is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Description" formControlName="description" required>
+      <mat-error *ngIf="widgetForm.controls.description.errors?.required">
+        Description is required
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select formControlName="size_id" placeholder="Size">
+        <mat-option *ngFor="let size of sizes" [value]="size.id">
+          {{size.title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select formControlName="machine_id" placeholder="Machine">
+        <mat-option *ngFor="let machine of machines" [value]="machine.id">
+          {{machine.title}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [disabled]="!widgetForm.valid" [mat-dialog-close]="widgetForm.value" cdkFocusInitial>
+    <span *ngIf="data.widget.id">Save</span>
+    <span *ngIf="!data.widget.id">Add</span>
+  </button>
+</mat-dialog-actions>

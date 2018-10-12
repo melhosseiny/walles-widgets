@@ -1,0 +1,21 @@
+<div fxLayout.gt-xs="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+  <mat-button-toggle-group fxLayout="row" fxLayoutAlign="start center" fxFlexOrder.xs="2" multiple *ngIf="widgets" #group="matButtonToggleGroup">
+    <span class="label">Color</span>
+    <mat-button-toggle disableRipple="true" matTooltip="{{color | titlecase}}" (click)="filterByColor(group.selected)" *ngFor="let color of getColors()" [attr.data-color]="color | lowercase" [value]="color"><mat-icon></mat-icon></mat-button-toggle>
+  </mat-button-toggle-group>
+  <button fxFlexOrder.xs="1" class="add-widget-button" mat-flat-button color="primary" (click)="openWidgetDialog(widget)">Add Widget</button>
+</div>
+<mat-list>
+  <mat-list-item *ngFor="let widget of getProcessedWidgets()" [attr.data-color]="widget.color | lowercase">
+    <div mat-list-avatar></div>
+    <h4 mat-line>{{widget.name | titlecase}}</h4>
+    <p mat-line class="mat-deem">
+      <span>{{widget.description | titlecase}} &middot; </span>
+      <span>{{widget.size.title | titlecase }} &middot; </span>
+      <span>{{widget.machine.title | titlecase }}</span>
+    </p>
+    <button mat-icon-button matTooltip="Edit {{widget.name | titlecase}}" (click)="openWidgetDialog(widget)">
+      <mat-icon size="16">edit</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>

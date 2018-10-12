@@ -1,0 +1,50 @@
+.mat-button-toggle-group {
+  box-shadow: none;
+  margin-left: 16px;
+  margin-top: 16px;
+}
+
+.mat-button-toggle-group .label {
+  margin-right: 10px;
+}
+
+.mat-button-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.08);
+  margin-right: 10px;
+}
+
+.mat-button-toggle:hover, .mat-button-toggle-checked {
+  border-color: rgba(0,0,0,0.6);
+}
+
+.add-widget-button {
+  margin-top: 16px;
+  margin-right: 16px;
+}
+
+.mat-button-toggle[data-color="pink"], .mat-list-item[data-color="pink"] .mat-list-avatar {
+  background-color: pink;
+}
+
+.mat-button-toggle[data-color="orange"], .mat-list-item[data-color="orange"] .mat-list-avatar {
+  background-color: orange;
+}
+
+.mat-button-toggle[data-color="green"], .mat-list-item[data-color="green"] .mat-list-avatar {
+  background-color: green;
+}
+
+.mat-button-toggle[data-color="cyan"], .mat-list-item[data-color="cyan"] .mat-list-avatar {
+  background-color: cyan;
+}
+
+.mat-button-toggle[data-color="blue"], .mat-list-item[data-color="blue"] .mat-list-avatar {
+  background-color: blue;
+}
+
+.mat-button-toggle[data-color="violet"], .mat-list-item[data-color="violet"] .mat-list-avatar {
+  background-color: violet;
+}
